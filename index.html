@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>全人網</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"> -->
+</head>
+<style>
+  body {
+    background: linear-gradient(to bottom, black, gray);
+    color: #FFF;
+
+  }
+
+  .input-group .rounded {
+    animation: fadeIn;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    /* don't forget to set a duration! */
+  }
+
+  #expert {
+    animation: slideInUp;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    /* don't forget to set a duration! */
+    animation-iteration-count: var(click);
+  }
+
+  #case {
+    animation: slideInUp;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    /* don't forget to set a duration! */
+    animation-iteration-count: var(scroll);
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .caseL {
+    border: solid;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-color: #ffffff7a;
+  }
+
+
+
+  td:hover a {
+    color: #fff;
+    animation: bounce;
+    transition: .3s;
+  }
+
+  /* @keyframes bounce {
+    100% {
+      transform: translateY(0);
+    }
+
+    40% {
+      transform: translateY(-30px);
+    }
+
+    60% {
+      transform: translateY(-15px);
+    }
+  } */
+
+
+  .sendBtn {
+    background-color: #4f4f4f99;
+    border-radius: 5px;
+  }
+
+  .sendBtn:hover {
+    background-color: #fff;
+    transform: scale(1.2);
+    transition: .3s;
+  }
+
+  /* Color of the links BEFORE scroll */
+
+  .navbar-scroll .nav-link,
+  .navbar-scroll .navbar-toggler .fa-bars {
+    color: #fff;
+
+  }
+
+  /* Color of the links AFTER scroll */
+
+  .navbar-scrolled .nav-link,
+  .navbar-scrolled .navbar-toggler .fa-bars {
+    color: #000000;
+
+  }
+
+  .nav-link:hover {
+    color: #fff;
+    transform: scale(1.5);
+    transition: .3s;
+  }
+
+  div img {
+    height: 24rem;
+    object-fit: cover
+  }
+
+  .card:hover {
+    transform: scale(1.5);
+    transition: .3s;
+    z-index: 999;
+  }
+
+  .card:hover img {
+    height: 12rem;
+    transition: .3s;
+  }
+
+  .card:hover .card-text {
+    transform: scale(2);
+  }
+
+  .card:hover .card-body {
+    height: 140px;
+    transition: .3s;
+  }
+
+  .describe {
+    display: none;
+    font-size: 12px;
+  }
+
+  .card:hover .describe {
+    display: block;
+  }
+
+  /* Color of the navbar AFTER scroll */
+
+  .navbar-scrolled {
+    background-color: #fff;
+  }
+
+  /* An optional height of the navbar AFTER scroll */
+
+  .navbar.navbar-scroll.navbar-scrolled {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .smBox {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .caseL {
+    font-size: 20px;
+  }
+
+  .caseL:hover {
+    background: rgba(255, 255, 255, 0.452);
+    transform: scale(1.2);
+    transition: 0.5s;
+  }
+
+  footer {
+    color: rgb(0, 0, 0);
+    background-color: gray(42, 42, 42);
+    opacity: .95;
+  }
+
+  footer:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.452);
+    opacity: 100;
+    transition: 0.5s;
+  }
+
+
+
+  .navbar-nav {
+    background-color: #58585873;
+    border-radius: 30px;
+  }
+</style>
+
+<body>
+  <!-- Start your project here-->
+
+  <!--Main Navigation-->
+  <header>
+    <!-- Animated navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+      <div class="container-fluid">
+        <button class="navbar-toggler ps-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="d-flex justify-content-start align-items-center">
+            <i class="fas fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link text-center" aria-current="page" href="#intro">
+                <img src="./img/LOGO.png" alt="LOGO" style="width: 32px;height: 32px;">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="#expert" rel="nofollow" target="_self">找服務</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="#case" target="_self">找案件</a>
+            </li>
+          </ul>
+
+
+
+          <ul class="navbar-nav flex-row justify-content-center">
+            <!-- Icons -->
+
+            <li class="nav-item ">
+              <a class="nav-link px-2" href="https://www.facebook.com/" rel="nofollow" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="https://www.instagram.com/" rel="nofollow" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ps-2" href="https://discord.com/" rel="nofollow" target="_blank">
+                <i class="fab fa-discord"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Animated navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="intro bg-image img-fluid" style="background-image:url(./img/pexels-fauxels-3184436.jpg);height: 100vh;">
+      <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.3)">
+        <div class="container d-flex align-items-center text-center h-100">
+          <div class="input-group rounded">
+            <input type="search" class="form-control rounded " placeholder="找達人、找服務..." aria-label="Search" aria-describedby="search-addon"
+            />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search" style="color:#fff"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  <!--Main Navigation-->
+  <br>
+  <!-- expert area -->
+  <div id="expert" class="expert bigBox container-fluid ">
+    <div class="text-center smBox">
+      <div style="display:flex;justify-content:space-around">
+        <div></div>
+        <h3><a href="./expert.html" style="color:#fff">EXPERT</a></h3>
+        <p style="margin:16px 0px"><a href="./expert.html" style="color:#fff"> more></a></p>
+      </div>
+      <hr>
+      <div class="row row-cols-3 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
+        <div class="col">
+          <a href="#">
+            <div class="card  " style="width: 12rem;">
+              <img src="./img/pro1.jpg" class="card-img-top text-center" style="object-position: 0% 0%;" alt="會計師" />
+              <div class="card-body">
+                <p class="card-text">會計</p>
+                <div class="describe">
+                  <hr>
+                  <p>製作財務預算、簿記、核數及分析報告等。</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <div class="card" style="width: 12rem;">
+              <img src="./img/pro2.jpg" class="card-img-top d-block mx-auto " alt="烹飪" />
+              <div class="card-body">
+                <p class="card-text">烹飪</p>
+                <div class="describe">
+                  <hr>
+                  <p>將食材處理並製作成食物、菜餚、餐點、膳食的方法。</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <div class="card" style="width: 12rem;">
+              <img src="./img/pro3.jpg" class="card-img-top" alt="工程" />
+              <div class="card-body">
+                <p class="card-text">工程</p>
+                <div class="describe">
+                  <hr>
+                  <p>使用科學知識來駕馭技術以解決實際問題</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <div class="card" style="width: 12rem;">
+              <img src="./img/pro4.jpg" class="card-img-top" alt="程式" />
+              <div class="card-body">
+                <p class="card-text">程式</p>
+                <div class="describe">
+                  <hr>
+                  <p>從事軟體撰寫，程式開發、維護的專業人員。</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <div class="card" style="width: 12rem;">
+              <img src="./img/pro5.jpg" class="card-img-top" style="object-position: 50% 0%;" alt="武術" />
+              <div class="card-body">
+                <p class="card-text">武術</p>
+                <div class="describe">
+                  <hr>
+                  <p>以肢體或冷兵器、武器互相競技的技術。</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <div class="card" style="width: 12rem;">
+              <img src="./img/pro6.jpg" class="card-img-top" alt="有氧" />
+              <div class="card-body">
+                <p class="card-text">有氧</p>
+                <div class="describe">
+                  <hr>
+                  <p>提高人體耐力質素，增強心肺功能為目的的體育運動</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <div class="card" style="width: 12rem;">
+              <img src="./img/pro7.jpg" class="card-img-top" alt="健身" />
+              <div class="card-body">
+                <p class="card-text">健身</p>
+                <div class="describe">
+                  <hr>
+                  <p>鍛鍊肌肉，屬於較大程度的身體鍛鍊，是一種強調肌肉健壯與美的活動。</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <div class="card" style="width: 12rem;">
+              <img src="./img/teacher_cameraman_1.jpg" class="card-img-top" alt="攝影" />
+              <div class="card-body">
+                <p class="card-text">攝影</p>
+                <div class="describe">
+                  <hr>
+                  <p>依拍攝機器的不同，一般可區分為平面攝影及影像攝影兩種攝影師。</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <br>
+      <div style="padding-right:45px;">
+        <!-- Button trigger modal -->
+        <input type="button" value="成為Expert" class="sendBtn" data-mdb-toggle="modal" data-mdb-target="#exampleModal"></div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color:#000000">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header  text-center">
+              <h1 class="modal-title" id="exampleModalLabel">上傳你的名片</h1>
+              <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark">上傳</button>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">確認</button>
+              <button type="button" class="btn btn-danger " data-mdb-dismiss="modal">取消</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br>
+
+
+  <!-- expert area -->
+  <br>
+  <!-- case area -->
+  <div id="case" class="container case bigBox container-fluid">
+    <div class="row justify-content-between text-center smBox">
+      <div style="display:flex;justify-content:space-around;">
+        <div></div>
+        <h3><a href="./expert.html" style="color:#fff">CASE</a></h3>
+        <p style="margin:16px 0px"><a href="./case.html" style="color:#fff"> more></a></p>
+      </div>
+      <hr>
+      <div class=" col-2  caseL">
+        <table>
+          <tr>
+            <td> <a href="#">活動企劃</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">清潔服務</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">影視創作</td>
+          </tr>
+          </a>
+          <tr>
+            <td><a href="#">餐點製作</td>
+          </tr>
+          <tr>
+            <td><a href="#">創意設計</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">運動教練</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">課後家教</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">居家修繕</a></td>
+          </tr>
+        </table>
+      </div>
+      <div class=" col-10  caseR">
+        <table>
+          <tr>
+            <th>
+              <h4>案件名稱 |</h4>
+            </th>
+            <th>
+              <h4>地點 |</h4>
+            </th>
+            <th>
+              <h4>聯絡資訊 |</h4>
+            </th>
+          </tr>
+          <br>
+          <tr>
+            <td>網頁製作</td>
+            <td>新北市</td>
+            <td>Roy3366@gmail.com</td>
+          </tr>
+          <tr>
+            <td>馬桶堵塞</td>
+            <td>桃園市</td>
+            <td>Harry878787@gmail.com</td>
+          </tr>
+          <tr>
+            <td>英文家教</td>
+            <td>台北市</td>
+            <td>JS30678@gmail.com</td>
+          </tr>
+          <tr>
+            <td>婚紗攝影</td>
+            <td>新竹市</td>
+            <td>Nine@yahoo.com.tw</td>
+          </tr>
+          <tr>
+            <td>健身教練</td>
+            <td>新北市</td>
+            <td>BigBoss@gmail.com</td>
+          </tr>
+          <tr>
+            <td>烹飪教學</td>
+            <td>新北市</td>
+            <td>Amy7788123@gmail.com</td>
+          </tr>
+          <tr>
+            <td>表演籌備</td>
+            <td>新北市</td>
+            <td>Chtistina0831@gmail.com</td>
+          </tr>
+          <tr>
+            <td>帳務整理</td>
+            <td>新北市</td>
+            <td>7766Rick@gmail.com</td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="padding-right:45px;margin-top: 20px;">
+        <input type="button" value="我要發Case" class="sendBtn" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
+      </div>
+      <!-- Button trigger modal -->
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true" style="color:#000000">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header  text-center">
+              <h1 class="modal-title" id="exampleModalLabel">我要發Case</h1>
+              <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <label for="name">案件名稱:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="addr">地點:</label><br>
+                <input type="text" id="addr" name="addr"><br>
+                <label for="email">聯絡資訊:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="description">詳細描述:</label><br>
+                <textarea id="description" name="description"></textarea><br>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">確認</button>
+              <button type="button" class="btn btn-danger " data-mdb-dismiss="modal">取消</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- case area -->
+  <!-- Modal -->
+  <div class="modal fade" id="beAexpert" tabindex="-1" aria-labelledby="HowToBeAexpert" aria-hidden="true" style="color:#000000">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header  text-center">
+          <h1 class="modal-title" id="HowToBeAexpert">註冊流程</h1>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="./img/EXPERT/beAexpert.png" alt="">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success " data-mdb-dismiss="modal">了解</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="doCase" tabindex="-1" aria-labelledby="doCase" aria-hidden="true" style="color:#000000">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header  text-center">
+          <h1 class="modal-title" id="HowToBeAexpert">發案流程</h1>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="./img/CASE/doCase.png" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success " data-mdb-dismiss="modal">了解</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- Footer -->
+  <footer id="footer" class="text-center text-lg-start">
+    <br>
+
+    <!-- Section: Links  -->
+    <section>
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold container-fluid m-0 p-0">
+                  <a class="footerLOGO" aria-current="page" href="./index.html">
+                      <img src="./img/LOGO.png" alt="LOGO" style="width: 128px;height: 128px;"></a>
+              </h6>
+              <div class="text-left" style="margin-left:15px"><a href="https://www.facebook.com/" class="me-4 text-reset">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://www.instagram.com/" class="me-4 text-reset">
+                      <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://discord.com/" class="me-4 text-reset ">
+                      <i class="fab fa-discord"></i>
+                  </a>
+              </div>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              EXPERT
+            </h6>
+            <p>
+              <a href="./expert.html" class="text-reset">達人頁面</a>
+            </p>
+            <p>
+              <a href="#exampleModal" class="text-reset" data-mdb-toggle="modal" data-mdb-target="#exampleModal">成為達人</a>
+            </p>
+            <p>
+              <a href="#beAexpert" class="text-reset" data-mdb-toggle="modal" data-mdb-target="#beAexpert">註冊流程</a>
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              CASE
+            </h6>
+            <p>
+              <a href="./case.html" class="text-reset">發案頁面</a>
+            </p>
+            <p>
+              <a href="#exampleModal2" class="text-reset" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">我要發案</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset" data-mdb-toggle="modal" data-mdb-target="#doCase">發案步驟</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">CONTACT</h6>
+
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              nhsh11206@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i>+886967324077</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2023 全人 All rights reserved.
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  <!-- End your project here-->
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript"></script>
+
+</body>
+
+</html>

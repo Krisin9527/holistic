@@ -1,0 +1,180 @@
+body {
+  background: linear-gradient(to bottom, black, gray);
+  color: #FFF
+}
+
+.input-group .rounded {
+  animation: fadeIn;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+  /* don't forget to set a duration! */
+}
+
+#expert {
+  animation: slideInUp;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+  /* don't forget to set a duration! */
+  animation-iteration-count: var(click);
+}
+
+#case {
+  animation: slideInUp;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+  /* don't forget to set a duration! */
+  animation-iteration-count: var(scroll);
+}
+
+table {
+  width: 100%;
+}
+
+.caseL {
+  border: solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-color: #ffffff7a;
+}
+
+
+
+td:hover a {
+  color: #fff;
+  animation: bounce;
+  transition: .3s;
+}
+
+/* @keyframes bounce {
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+} */
+
+
+.sendBtn {
+  background-color: #4f4f4f99;
+  border-radius: 5px;
+}
+
+.sendBtn:hover {
+  background-color: #fff;
+  transform: scale(1.2);
+  transition: .3s;
+}
+
+/* Color of the links BEFORE scroll */
+
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler .fa-bars {
+  color: #fff;
+
+}
+
+/* Color of the links AFTER scroll */
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler .fa-bars {
+  color: #000000;
+
+}
+
+.nav-link:hover {
+  color: #fff;
+  transform: scale(1.5);
+  transition: .3s;
+}
+
+div img {
+  height: 24rem;
+  object-fit: cover
+}
+
+.card:hover {
+  transform: scale(1.5);
+  transition: .3s;
+  z-index: 999;
+}
+
+.card:hover img {
+  height: 12rem;
+  transition: .3s;
+}
+
+.card:hover .card-text {
+  transform: scale(2);
+}
+
+.card:hover .card-body {
+  height: 140px;
+  transition: .3s;
+}
+
+.describe {
+  display: none;
+  font-size: 12px;
+}
+
+.card:hover .describe {
+  display: block;
+}
+
+/* Color of the navbar AFTER scroll */
+
+.navbar-scrolled {
+  background-color: #fff;
+}
+
+/* An optional height of the navbar AFTER scroll */
+
+.navbar.navbar-scroll.navbar-scrolled {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.smBox {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.caseL {
+  font-size: 20px;
+}
+
+.caseL:hover{
+  background: rgba(255, 255, 255, 0.452);
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+footer {
+  color: rgb(0, 0, 0);
+  background-color: gray(42, 42, 42);
+  opacity: .95;
+}
+
+footer:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.452);
+  opacity: 100;
+  transition: 0.5s;
+}
+
+
+
+.navbar-nav {
+  background-color: #58585873;
+  border-radius: 30px;
+}
+.footerLOGO:hover{
+transform: scale(3)
+}
